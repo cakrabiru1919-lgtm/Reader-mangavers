@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baca Manga - MangaVerse</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="reader-container">
+        <button onclick="window.location.href='index.html'" style="margin: 20px; padding: 10px 20px;">← Kembali</button>
+        <h2 id="mangaTitle" style="text-align: center;">Loading...</h2>
+        <div id="chapterImages"></div>
+        <div class="controls">
+            <button id="prevChapter">◀ Chapter Sebelumnya</button>
+            <button id="nextChapter">Chapter Selanjutnya ▶</button>
+        </div>
+    </div>
+    <script src="js/translator.js"></script>
+    <script src="js/tts.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const mangaTitle = urlParams.get('manga');
+        document.getElementById('mangaTitle').innerText = mangaTitle || 'Manga';
+        
+        // Simulasi gambar chapter
+        const images = [];
+        for(let i = 1; i <= 10; i++) {
+            images.push(`https://via.placeholder.com/800x1200/2d2d44/white?text=Page+${i}`);
+        }
+        
+        const container = document.getElementById('chapterImages');
+        container.innerHTML = images.map(img => `<img src="${img}" loading="lazy" class="manga-page">`).join('');
+        
+        document.getElementById('prevChapter').onclick = () => alert('Chapter sebelumnya (demo)');
+        document.getElementById('nextChapter').onclick = () => alert('Chapter selanjutnya (demo)');
+    </script>
+</body>
+</html>
