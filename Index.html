@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>MangaVerse - Baca Manga/Manhwa/Manhua</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 MANGA VERSE</h1>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Cari manga/manhwa/manhua...">
+                <button id="searchBtn">🔍 Cari</button>
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" data-type="all">Semua</button>
+                <button class="filter-btn" data-type="manga">📖 Manga</button>
+                <button class="filter-btn" data-type="manhwa">📱 Manhwa</button>
+                <button class="filter-btn" data-type="manhua">🎨 Manhua</button>
+            </div>
+        </header>
+
+        <div class="language-control">
+            <label>🌐 Auto Translate ke:</label>
+            <select id="translateLang">
+                <option value="id">Bahasa Indonesia</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="ja">日本語</option>
+                <option value="zh">中文</option>
+                <option value="ar">العربية</option>
+            </select>
+            <label class="tts-toggle">
+                <input type="checkbox" id="autoTTS"> 🔊 Bacakan otomatis
+            </label>
+        </div>
+
+        <div id="mangaGrid" class="manga-grid">
+            <!-- Konten akan di-load di sini -->
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="js/tts.js"></script>
+    <script src="js/scraper.js"></script>
+</body>
+  </html>
